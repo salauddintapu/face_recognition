@@ -12,7 +12,6 @@ from arcface.utils import get_time, gen_plot, hflip_batch, separate_bn_paras
 from PIL import Image
 from torchvision import transforms as trans
 import math
-import bcolz
 
 class face_learner(object):
     def __init__(self, conf, inference=False):
@@ -79,7 +78,7 @@ class face_learner(object):
             save_path = conf.save_path
         else:
             save_path = conf.model_path            
-        self.model.load_state_dict(torch.load(save_path/'model_{}'.format(fixed_str),map_location=torch.device('cpu')))
+        self.model.load_state_dict(torch.load(save_path/'model_{}'.format(fixed_str),map_location=torch.device('cuda' if conf.device.type == 'cuda' else 'cpu')))
         if not model_only:
             self.head.load_state_dict(torch.load(save_path/'head_{}'.format(fixed_str)))
             self.optimizer.load_state_dict(torch.load(save_path/'optimizer_{}'.format(fixed_str)))
