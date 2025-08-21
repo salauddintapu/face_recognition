@@ -67,13 +67,16 @@ facebank/
 ```
 > **⚠️ Note:** Use cropped faces of the persons you want to recognize. Name the folder after the name of the person and store images of that person in the named folder.
 
+### Update
+> The api currently uses the `Flask` library. In the next update, `Flask` will be removed and `FastAPI` will be adopted.
+
 ## API References
 
 ### Endpoint: `/rec`
 
 #### Payload Example Using cURL
 ```bash
-curl --location 'http://localhost:5000/id_info' \
+curl --location 'http://localhost:5000/rec' \
 --header 'Content-Type: application/json' \
 --data '{
     "file": "image in base64 format"
