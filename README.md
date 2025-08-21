@@ -33,7 +33,7 @@ cd face_recognition
 ```
 <br>
 
-> **⚠️ Note:** It is recommended to use a virtual environment (`venv` or `conda`). If using conda, after creating the environment, install bcolz first:
+> **⚠️ Note:** It is recommended to use a virtual environment (`venv` or `conda`). After creating the environment, install bcolz first:
 
 ```bash
 conda create -n myenv python==3.8.0

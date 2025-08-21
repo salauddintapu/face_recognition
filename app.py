@@ -24,7 +24,7 @@ def image_to_base64(image):
     data = base64.b64encode(frame) 
     return data
         
-@app.route('/id_info', methods=['POST', 'GET'])
+@app.route('/rec', methods=['POST', 'GET'])
 def get_predictions():
     if request.method == 'POST':
         try:
